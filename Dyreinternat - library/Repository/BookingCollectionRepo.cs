@@ -15,6 +15,12 @@ namespace dyreinternat___library.Repository
 
         public virtual void Add(Booking booking) //virtuel tiladder denne metode at blive "overriden" i en subklasse
         {
+            if (booking == null)
+            {
+
+                throw new ArgumentNullException("booking", "Booking må ikke være null.");
+            }
+            Debug.WriteLine("add2");
             _bookings.Add(booking); //tilføjer et "Booking" objekt til "_bookings" listen
         }
 
